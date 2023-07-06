@@ -28,7 +28,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * 捕获sql异常,通过split函数空格区分元素，拼接字符串返回
+     * 捕获sql异常,通过split函数空格区分元素，拼接字符串返回哪个用户名重复了
      * @param ex
      * @return
      */
