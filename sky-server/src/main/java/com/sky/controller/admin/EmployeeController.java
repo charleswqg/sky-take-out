@@ -119,4 +119,28 @@ public class EmployeeController {
 
    }
 
+    /**
+     * 修改信息第一步，（回显）查询员工信息，路径参数传id,返回json result
+     * @param id
+     * @return
+     */
+   @GetMapping("/{id}")
+   @ApiOperation("查询员工信息")
+   public Result<Employee> getById(@PathVariable long id){
+       Employee employee =employeeService.getById(id);
+       return Result.success(employee);
+   }
+
+    /**
+     * 修改信息第二步，修改员工信息.一般修改put,新增post.不确定的提交请求，无脑post。以接口文档为准！！
+     * @param employeeDTO
+     * @return
+     */
+   @PutMapping
+   @ApiOperation("编辑员工信息")
+   public Result update(@RequestBody EmployeeDTO employeeDTO){
+       employeeService.update(employeeDTO);
+       return Result.success();
+   }
+
 }

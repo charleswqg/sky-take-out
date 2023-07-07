@@ -22,7 +22,7 @@
             name=#{name},
         </if>
         <if test="username !=null">
-            username=#{username},
+            username= #{username},
         </if>
         <if test="password !=null">
             password=#{password},
@@ -36,20 +36,14 @@
         <if test="status !=null">
             status=#{status},
         </if>
-        <if test="createTime !=null">
-            create_time=#{createTime},
-        </if>
         <if test="updateTime !=null">
             update_time=#{updateTime},
-        </if>
-        <if test="createUser !=null">
-            create_user=#{createUser},
         </if>
         <if test="updateUser !=null">
             update_user=#{updateUser},
         </if>
     </set>
- where id=#{id}
+    where id=#{id}
     </update>
 
 </mapper>
