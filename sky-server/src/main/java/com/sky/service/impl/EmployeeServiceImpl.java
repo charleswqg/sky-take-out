@@ -108,4 +108,15 @@ public class EmployeeServiceImpl implements EmployeeService {
         return new PageResult(total,records);
     }
 
+    /**
+     * 启用禁用账号
+     * @param status
+     * @param id
+     */
+    @Override
+    public void StartorStop(Integer status, long id) {
+        Employee employee=Employee.builder().status(status).id(id).build();
+        employeeMapper.update(employee);
+    }
+
 }

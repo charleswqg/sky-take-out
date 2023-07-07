@@ -94,7 +94,7 @@ public class EmployeeController {
     /**
      * 员工分页查询
      * @param employeePageQueryDTO
-     * @return
+     * @return result对象，泛型是pageresult对象（data是pr对象）
      */
     @ApiOperation("员工分页查询")
     @GetMapping("/page")
@@ -104,6 +104,19 @@ public class EmployeeController {
         return Result.success(pageResult);
     }
 
+    /**
+     * 启用禁用账号
+     * @param status 当前状态
+     * @param id 修改的用户id
+     * @return
+     */
+    @PostMapping("/status/{status}")
+    @ApiOperation("启用禁用账号")
+   public Result StartorStop(@PathVariable Integer status, long id){
+        log.info("启用禁用员工账号：{}，{}" ,status,id);
+        employeeService.StartorStop(status,id);
+        return Result.success();
 
+   }
 
 }
